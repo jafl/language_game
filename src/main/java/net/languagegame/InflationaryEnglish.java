@@ -1,5 +1,11 @@
 package net.languagegame;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.ResourceBundle;
+import java.util.Enumeration;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -13,13 +19,15 @@ import java.util.regex.Matcher;
 public class InflationaryEnglish
 	extends Translator
 {
-	private static Pattern[]	thePatterns;
-	private static String[]	theReplacements;
+	private static List<Pattern>	thePatterns;
+	private static List<String>		theReplacements;
 
 	static
 	{
-		thePatterns = new Pattern[]
-		{
+		// basic list must be done in order, so cannot be stored in resource bundle
+
+		thePatterns = new ArrayList<Pattern>();
+		Collections.addAll(thePatterns,
 			Pattern.compile("ten"),
 			Pattern.compile("nine"),
 			Pattern.compile("eight|ate"),
@@ -28,15 +36,14 @@ public class InflationaryEnglish
 			Pattern.compile("five"),
 			Pattern.compile("four|fore?"),
 			Pattern.compile("three"),
-			Pattern.compile("two|too"),
+			Pattern.compile("two|too|\\bto\\b"),
 			Pattern.compile("one|won"),
 
 			Pattern.compile("twice"),
-			Pattern.compile("once")
-		};
+			Pattern.compile("once"));
 
-		theReplacements = new String[]
-		{
+		theReplacements = new ArrayList<String>();
+		Collections.addAll(theReplacements,
 			"eleven",
 			"ten",
 			"nine",
@@ -49,8 +56,16 @@ public class InflationaryEnglish
 			"two",
 
 			"thrice",
-			"twice"
-		};
+			"twice");
+
+		ResourceBundle bundle    = ResourceBundle.getBundle("net.languagegame.inflationary_english");
+		Enumeration<String> keys = bundle.getKeys();
+		while (keys.hasMoreElements())
+		{
+			String key = keys.nextElement();
+			thePatterns.add(Pattern.compile(key));
+			theReplacements.add(bundle.getString(key));
+		}
 	}
 
 	public InflationaryEnglish()
@@ -66,9 +81,9 @@ public class InflationaryEnglish
 	public String translate(
 		String text)
 	{
-		for (int i=0; i<thePatterns.length; i++)
+		for (int i=0; i<thePatterns.size(); i++)
 		{
-			text = thePatterns[i].matcher(text).replaceAll(theReplacements[i]);
+			text = thePatterns.get(i).matcher(text).replaceAll(theReplacements.get(i));
 		}
 
 		return text;
