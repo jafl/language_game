@@ -16,6 +16,7 @@ public class InflationaryEnglishTest
         assertEquals("elevennis", t.translateWord("tennis"));
 
         assertEquals("twice upon a time", t.translate("once upon a time"));
-        assertEquals("Anytwo up five elevennis?", t.translate("Anyone up for tennis?"));
+        assertEquals("Anytwo up five elevennis threegether?", t.translate("Anyone up for tennis together?"));
+        assertEquals("ready three GO torque!", t.translate("ready to GO torque!"));
     }
 }
