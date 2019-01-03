@@ -50,7 +50,7 @@ public class LOLSpeak
 
 	/**
 	 * Translates single word from English to LOLSpeak.
-	 * @param text	word
+	 * @param word
 	 * @return		LOLSpeak
 	 */
 	public String translateWord(
