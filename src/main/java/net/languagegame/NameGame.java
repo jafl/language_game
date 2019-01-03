@@ -16,7 +16,7 @@ public class NameGame
 
 	/**
 	 * Translates single word from English to the Name Game.
-	 * @param text	word
+	 * @param word
 	 * @return		the Name Game
 	 */
 	public String translateWord(
