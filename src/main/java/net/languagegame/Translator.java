@@ -53,7 +53,7 @@ public abstract class Translator
 
 	/**
 	 * Translates single word from English to whatever.
-	 * @param text	word
+	 * @param word
 	 * @return		translated word
 	 */
 	abstract public String translateWord(String word);
