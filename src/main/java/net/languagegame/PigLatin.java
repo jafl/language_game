@@ -21,7 +21,7 @@ public class PigLatin
 
 	/**
 	 * Translates single word from English to Pig Latin.
-	 * @param text	word
+	 * @param word
 	 * @return		Pig Latin
 	 */
 	public String translateWord(
