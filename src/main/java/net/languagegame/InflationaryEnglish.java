@@ -91,7 +91,7 @@ public class InflationaryEnglish
 
 	/**
 	 * Inflates single English word.
-	 * @param text	word
+	 * @param word
 	 * @return		Inflationary English
 	 */
 	public String translateWord(
