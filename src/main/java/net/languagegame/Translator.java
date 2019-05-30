@@ -56,5 +56,5 @@ public abstract class Translator
 	 * @param word
 	 * @return		translated word
 	 */
-	abstract public String translateWord(String word);
+	public abstract String translateWord(String word);
 }
