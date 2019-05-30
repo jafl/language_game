@@ -44,10 +44,6 @@ public class LOLSpeak
 		};
 	}
 
-	public LOLSpeak()
-	{
-	}
-
 	/**
 	 * Translates single word from English to LOLSpeak.
 	 * @param word
