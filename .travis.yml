@@ -5,8 +5,7 @@ addons:
     organization: "jafl-github"
 
 script:
-  - "mvn dependency:tree"
-  - "mvn cobertura:cobertura"
+  - "mvn -X cobertura:cobertura"
   - sonar-scanner
 
 after_success:
