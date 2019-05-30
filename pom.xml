@@ -32,6 +32,12 @@
 					</formats>
 					<check />
 				</configuration>
+				<exclusions>
+					<exclusion>
+						<groupId>com.sun</groupId>
+						<artifactId>tools</artifactId>
+					</exclusion>
+				</exclusions>
 			</plugin>
 		</plugins>
 	</build>
