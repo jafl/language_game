@@ -1,6 +1,12 @@
 language: java
 
-script: "mvn cobertura:cobertura"
+addons:
+  sonarcloud:
+    organization: "jafl-github"
+
+script:
+  - "mvn cobertura:cobertura"
+  - sonar-scanner
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
