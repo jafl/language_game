@@ -1,7 +1,6 @@
 package net.languagegame;
 
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 
 /**
  * Translates English to Pig Latin.
@@ -14,10 +13,6 @@ public class PigLatin
 	extends Translator
 {
 	private static final Pattern	thePrefixPattern = Pattern.compile("^(qu|[bcdfghjklmnpqrstvwxyz]+)(.+)$");
-
-	public PigLatin()
-	{
-	}
 
 	/**
 	 * Translates single word from English to Pig Latin.
