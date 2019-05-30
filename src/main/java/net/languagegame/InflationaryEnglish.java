@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 import java.util.Enumeration;
 
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 
 /**
  * Translates English to Victor Borge's Inflationary English.
@@ -66,10 +65,6 @@ public class InflationaryEnglish
 			thePatterns.add(Pattern.compile(key));
 			theReplacements.add(bundle.getString(key));
 		}
-	}
-
-	public InflationaryEnglish()
-	{
 	}
 
 	/**
