@@ -32,12 +32,18 @@
 					</formats>
 					<check />
 				</configuration>
-				<exclusions>
-					<exclusion>
-						<groupId>com.sun</groupId>
-						<artifactId>tools</artifactId>
-					</exclusion>
-				</exclusions>
+				<dependencies>
+					<dependency>
+						<groupId>net.sourceforge.cobertura</groupId>
+						<artifactId>cobertura</artifactId>
+						<exclusions>
+							<exclusion>
+								<groupId>com.sun</groupId>
+								<artifactId>tools</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
