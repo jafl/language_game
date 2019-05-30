@@ -10,10 +10,6 @@ package net.languagegame;
 public class NameGame
 	extends Translator
 {
-	public NameGame()
-	{
-	}
-
 	/**
 	 * Translates single word from English to the Name Game.
 	 * @param word
